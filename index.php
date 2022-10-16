@@ -192,6 +192,14 @@
             visibility: visible;
         }
 
+        .pq {
+            display: none;
+        }
+
+        .gr {
+            display: block;
+        }
+
         @keyframes slide {
             0% {
                 opacity: 0;
@@ -226,11 +234,27 @@
                 width: 100%;
                 margin-bottom: 35px;
             }
+
+            .pq {
+                display: inline;
+            }
+
+            .gr {
+                display: none;
+            }
         }
 
         @media screen and (max-width: 480px) {
             .logo {
                 font-size: 150px;
+            }
+
+            .pq {
+                display: inline;
+            }
+
+            .gr {
+                display: none;
             }
         }
     </style>
@@ -267,12 +291,12 @@
     <div id="quando" class="container-fluid">
         <div class="row">
             <div class="col-sm-8">
-                <h1>QUANDO?</h1><br>
+                <h1>QUANDO? <span class="glyphicon glyphicon-calendar logo-small pq"></span></h1><br>
                 <h4>De 12 à 15 de novembro</h4><br>
 
             </div>
             <div class="col-sm-4">
-                <span class="glyphicon glyphicon-calendar logo"></span>
+                <span class="glyphicon glyphicon-calendar logo gr"></span>
             </div>
         </div>
     </div>
@@ -280,11 +304,11 @@
     <div id="onde" class="container-fluid bg-grey">
         <div class="row">
             <div class="col-sm-4">
-                <span class="glyphicon glyphicon-map-marker logo slideanim"></span>
+                <span class="glyphicon glyphicon-map-marker logo slideanim gr"></span>
             </div>
             <div class="col-sm-8">
-                <h1>ONDE?</h1><br>
-                <h4><strong>RECANTO PRESBITERIANO</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
+                <h1>ONDE? <span class="glyphicon glyphicon-map-marker logo-small slideanim pq"></span></h1><br>
+                <h4><strong>RECANTO PRESBITERIANO</strong></h4><br>
             </div>
         </div>
     </div>
@@ -293,11 +317,11 @@
     <div id="quanto" class="container-fluid">
         <div class="row">
             <div class="col-sm-8">
-                <h1>QUANTO?</h1><br>
+                <h1>QUANTO? <span class="glyphicon glyphicon-usd logo-small pq"></span></h1><br>
                 <h4>Investimento de R$100,00</h4><br>
             </div>
             <div class="col-sm-4">
-                <span class="glyphicon glyphicon-usd logo"></span>
+                <span class="glyphicon glyphicon-usd logo gr"></span>
             </div>
         </div>
     </div>
@@ -360,12 +384,14 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-4 form-group">
+
+                    <div class="col-sm-5 form-group">
                         <div class="form-group">
                             <label for="cmpBairro">Bairro</label>
                             <input type="text" class="form-control" name="cmpBairro" id="cmpBairro" aria-describedby="helpId" placeholder="">
                         </div>
                     </div>
+
                     <div class="col-sm-5 form-group">
                         <div class="form-group">
                             <label for="cmpCidade">Cidade</label>
@@ -379,6 +405,27 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-sm-3 form-group">
+                        <div class="form-group">
+                            <label for="cmpTelefone">Telefone</label>
+                            <input type="text" class="form-control" name="cmpTelefone" id="cmpTelefone" aria-describedby="helpId" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 form-group">
+                        <div class="form-group">
+                            <label for="cmpEmail">Email</label>
+                            <input type="text" class="form-control" name="cmpEmail" id="cmpEmail" aria-describedby="helpId" placeholder="">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+                        <button type="button" name="" id="" class="btn btn-success btn-lg btn-block">Confirmar</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -387,10 +434,11 @@
             <a href="#myPage" title="To Top">
                 <span class="glyphicon glyphicon-chevron-up"></span>
             </a>
-            <a href="https://bitwase.com" target="_blank">
-                <p><img src="arquivos/imagens/bitwase.png" width="250px"></p>
-                <p>(41)98496.0209</p>
-            </a>
+            <p width="100%">
+                <a href="https://bitwase.com" target="_blank"><img src="arquivos/imagens/bitwase.png" width="200px">
+                </a>
+            </p>
+            <p>(41)98496.0209</p>
         </footer>
 
         <script>
