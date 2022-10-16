@@ -1,0 +1,245 @@
+<?php
+//error_reporting(~E_ALL);
+include 'conexao.php';
+//include 'cb.php'; comentado esta linha, pois está apresentando erro 
+
+$ev = $_REQUEST[ev];
+
+$tipo = 5;//tipo de etiqueta 
+
+/*******************************
+1 - 24 etiquetas por página, TAMANHO A4
+2 - 21 etiquetas por página, TAMANHO A4 pimaco
+3 - 14 etiquetas por página, TAMANHO A4 pimaco A4263 A4363
+4 - 30 etiquetas por página, TAMANHO A4
+5 - 30 etiquetas por página, TAMANHO A4 SEM COD BARRAS
+*******************************/
+
+
+//receber variável para identificar se é impressão de todas ou de etiqueta específica
+$t = $_REQUEST[t];//tipo 1 - todos 2 - específico 3 - SETOR ESPECÍFICO (id do setor) talvez
+
+$a = date('dmYHis');
+
+if($t == 1){//se for todos, faz esta seleção
+//echo "select * from tb_inscritos where id in (select distinct inscrito from tb_inscricao where evento = '$ev') order by nome";
+$ls1 = mysql_query("select * from tb_inscritos where id in (select distinct inscrito from tb_inscricao where evento = '$ev') order by nome");
+}
+if($t == 2){
+//se t == 2, recebe a var com os ids
+$id = $_REQUEST[id];//recebe lista de ids que deverá ser impresso
+$ls1 = mysql_query("select * from tb_inscritos where id in($id) order by nome");
+}
+
+if($t == 3){//setor
+	$s = $_REQUEST[s];//setor
+	$ls1 = mysql_query("select * from tb_inscritos where id in (select distinct inscrito from tb_inscricao where evento = '$ev') and setor = '$s' order by nome");
+//	echo "select * from tb_inscritos where id in (select distinct inscrito from tb_inscricao where evento = '$ev') and setor = '$s' order by nome";
+}
+
+########################################
+ob_end_flush();
+include('arquivos/mpdf/mpdf.php');
+
+if($tipo == 1){
+$mpdf = new mPDF(
+'',    // mode - default ''
+'A4',    // format - A4, for example, default ''
+ 14,     // font size - default 0
+ '',    // default font family
+ 7.2,    // margin_left
+ 7.2,    // margin right
+ 9.1,     // margin top
+ 9.1,    // margin bottom
+ 9,     // margin header
+ 9,     // margin footer
+ 'P');  // L - landscape, P - portrait
+
+$alt = "33.867mm";//altura
+$lar = "63.853mm";//largura
+$dcol = "1mm";//distancia largura
+$dlin = "0mm";//distancia linha
+}
+
+if($tipo == 2){
+$mpdf = new mPDF(
+'',    // mode - default ''
+'A4',    // format - A4, for example, default ''
+ 14,     // font size - default 0
+ '',    // default font family
+ 7.2,    // margin_left
+ 7.2,    // margin right
+ 15.2,     // margin top
+ 15.2,    // margin bottom
+ 0,     // margin header
+ 0,     // margin footer
+ 'P');  // L - landscape, P - portrait
+
+$alt = "37.1mm";//altura
+$lar = "63.8mm";//largura
+$dcol = "1mm";//distancia largura
+$dlin = "0mm";//distancia linha
+}
+
+if($tipo == 3){
+
+/*
+$mpdf = new mPDF(
+'',    // mode - default ''
+'A4',    // format - A4, for example, default ''
+ 14,     // font size - default 0
+ '',    // default font family
+ 4.7,    // margin_left
+ 4.7,    // margin right
+ 15,     // margin top
+ 15,    // margin bottom
+ 0,     // margin header
+ 0,     // margin footer
+ 'P');  // L - landscape, P - portrait
+
+$alt = "38.0mm";//altura
+$lar = "99.0mm";//largura
+$dcol = "2.6mm";//distancia largura
+$dlin = "0mm";//distancia linha
+
+*/
+$mpdf = new mPDF(
+'',    // mode - default ''
+'A4',    // format - A4, for example, default ''
+ 14,     // font size - default 0
+ '',    // default font family
+ 4.7,    // margin_left
+ 4.7,    // margin right
+ 15,     // margin top
+ 15,    // margin bottom
+ 0,     // margin header
+ 0,     // margin footer
+ 'P');  // L - landscape, P - portrait
+
+$alt = "38.1mm";//altura 38.1mm
+$lar = "99.0mm";//largura
+$dcol = "2.6mm";//distancia largura
+$dlin = "0mm";//distancia linha
+}
+
+if($tipo == 4){
+
+/*
+$mpdf = new mPDF(
+'',    // mode - default ''
+'A4',    // format - A4, for example, default ''
+ 12,     // font size - default 0
+ '',    // default font family
+ 4.7,    // margin_left
+ 4.7,    // margin right
+ 15,     // margin top
+ 15,    // margin bottom
+ 0,     // margin header
+ 0,     // margin footer
+ 'P');  // L - landscape, P - portrait
+
+$alt = "38.0mm";//altura
+$lar = "99.0mm";//largura
+$dcol = "2.6mm";//distancia largura
+$dlin = "0mm";//distancia linha
+*/
+//$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [257, 280]]);
+
+
+$mpdf = new mPDF(
+'',    // mode - default ''
+'A4',    // format - A4, for example, default ''
+ 12,     // font size - default 0
+ '',    // default font family
+ 3.6,    // margin_left
+ 4,    // margin right
+ 12,     // margin top
+ 12,    // margin bottom
+ 0,     // margin header
+ 0,     // margin footer
+ 'P');  // L - landscape, P - portrait
+
+$alt = "24.0mm";//altura 38.1mm
+$lar = "65.0mm";//largura
+$dcol = "2.6mm";//distancia largura
+$dlin = "0mm";//distancia linha
+}//fim tipo 4
+
+if($tipo == 5){
+
+$mpdf = new mPDF(
+'',    // mode - default ''
+'A4',    // format - A4, for example, default ''
+ 12,     // font size - default 0
+ '',    // default font family
+ 3.6,    // margin_left
+ 4,    // margin right
+ 12,     // margin top
+ 12,    // margin bottom
+ 0,     // margin header
+ 0,     // margin footer
+ 'P');  // L - landscape, P - portrait
+
+$alt = "25.4mm";//altura 38.1mm
+$lar = "65mm";//largura
+$dcol = "2mm";//distancia largura
+$dlin = "1mm";//distancia linha
+}//fim tipo 5
+
+//$mpdf->debug = true;
+$aux = 0;
+//definir margens e quantidades de etiquetas
+
+//regra aqui para gambiarra
+$qt = $_REQUEST[q];//número da etiqueta atual
+if($qt == ""){
+	$qt = 1;
+}
+//colocar em v.inscritos2 a opção para informar a posição da próxima etiqueta
+
+
+while($aux < $qt-1){
+$aux++;
+$etq = "<div style='text-align:center;width:$lar;height:$alt;margin-left:$dcol;background:#fff;border-radius:5px; float:left;'><br><br></div>";
+$cima .= $etq;
+}
+
+while($ls = mysql_fetch_assoc($ls1)){
+$nome = ucwords($ls[nome]);
+$nome = mb_convert_case($ls[nome], MB_CASE_UPPER, 'UTF-8');//$ls[nome]
+$cpf = $ls[cpf];
+$cpf = str_replace(".","",$cpf);//remove pontos
+$cpf = str_replace("-","",$cpf);//remove hífen
+$cod = $ls[id];
+$cod = str_pad($cod, 5, "0", STR_PAD_LEFT);
+//$barras = "<img src='http://bitwase.com/sistemas/eb/image.php?code=code128&o=1&t=30&r=1&text=$cpf&f=2&a1=&a2='/>";
+
+if($tipo != 4){
+	$barras = "<img src='http://umadpguvaranas.com.br/jovens/image.php?code=code128&o=1&t=30&r=1&text=$cod&f=2&a1=&a2='/>";
+}
+if($tipo == 4){
+	$barras = "<img src='http://umadpguvaranas.com.br/jovens/image.php?code=code128&o=1&t=20&r=1&text=$cod&f=2&a1=&a2='/>";
+//	$barras = "<img src='http://umadpguvaranas.com.br/jovens/image.php?code=code100&o=1&t=20&r=1&text=$cod&f=2&a1=&a2='/>";
+//	$barras = "";
+}
+if($tipo == 5){
+//	$barras = "<img src='http://umadpguvaranas.com.br/jovens/image.php?code=code128&o=1&t=20&r=1&text=$cod&f=2&a1=&a2='/>";
+//	$barras = "<img src='http://umadpguvaranas.com.br/jovens/image.php?code=code100&o=1&t=20&r=1&text=$cod&f=2&a1=&a2='/>";
+	$barras = "";
+}
+$etq = "<div style='text-align:center;width:$lar;height:$alt;margin-left:$dcol;background:#fff;border-radius:5px; float:left;'><br>$nome<br>$barras</div>";
+$cima .= $etq;
+}
+$mpdf->AddPage('P');
+//$mpdf->WriteHTML("image.php?code=code128&o=1&t=30&r=1&text=$cpf&f=2&a1=&a2=");
+$mpdf->WriteHTML($cima);
+
+$mpdf->WriteHTML($inscritos);
+if($tipo != 5){
+	$mpdf->Output('etiquetas_'.$a.'.pdf',d);
+}
+if($tipo == 5){
+	$mpdf->Output('etiquetas_'.$s.'_'.$a.'.pdf',d);
+}
+//$mpdf->Output();
+?>

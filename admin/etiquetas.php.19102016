@@ -1,0 +1,63 @@
+<?php
+error_reporting(~E_ALL);
+include 'conexao.php';
+//include 'cb.php';
+
+########## GERAR CÓD BARRAS ############
+require('function.php');
+
+//$nome = "Wellington Ulisses Santos";
+//criar neste arquivo função para chamar a impressão da etiqueta
+//geraCod($cb,$nome);
+
+
+########################################
+include('arquivos/mpdf/mpdf.php');
+$mpdf = new mPDF(
+'',    // mode - default ''
+'A4',    // format - A4, for example, default ''
+ 14,     // font size - default 0
+ '',    // default font family
+ 7.2,    // margin_left
+ 7.2,    // margin right
+ 9.1,     // margin top
+ 9.1,    // margin bottom
+ 9,     // margin header
+ 9,     // margin footer
+ 'P');  // L - landscape, P - portrait
+//$mpdf = new mPDF();
+
+$aux = 0;
+//definir margens e quantidades de etiquetas
+$alt = "33.867mm";//altura
+$lar = "63.853mm";//largura
+$dcol = "1mm";//distancia largura
+$dlin = "0mm";//distancia linha
+
+//$qt = "7";
+
+//colocar aqui função para gerar lista com os nomes e os devidos códigos
+
+$ls1 = mysql_query("select * from tb_inscritos order by nome");
+while($ls = mysql_fetch_assoc($ls1)){
+$barras = "<img src='image.php?code=code128&o=1&t=30&r=1&text=07500846932&f=2&a1=&a2='/>";
+$etq = "<div style='text-align:center;width:$lar;height:$alt;margin-left:$dcol;background:#fff;border-radius:5px; float:left;'><br>$nome1<br>$barras</div>";
+
+$cima .= $etq;
+}
+
+
+while($aux < $qt){
+$aux++;
+$cima .= $etq;
+}
+
+$mpdf->AddPage('P');
+
+$mpdf->WriteHTML($cima);
+
+$mpdf->WriteHTML($inscritos);
+
+//$mpdf->Output('etiquetas.pdf',d);
+$mpdf->Output();
+?>

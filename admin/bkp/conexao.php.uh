@@ -1,0 +1,19 @@
+<?php #conexão com db
+$db="bwebtb";
+$db_user="bwebtb";
+$db_senha="b3tw1s2@";
+$db_serv="200.147.61.75";
+
+if(!($id = @mysql_connect($db_serv,$db_user,$db_senha)))
+{
+   echo "Não foi possível estabelecer
+uma conexão com o gerenciador MySQL. Favor Contactar o Administrador. Não se comunicou com o BANCO";
+   exit;
+} 
+if(!($con=@mysql_select_db($db,$id))) { 
+   echo "Não foi possível estabelecer
+uma conexão com o banco MySQL. Favor Contactar o Administrador. Não se comunicou com a BASE";
+   exit; 
+} 
+mysql_set_charset('UTF8', $id);
+?>

@@ -1,0 +1,25 @@
+﻿on:
+  push:
+    branches:
+      - main
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        #4.3.2
+        with:
+          server: ${{ secrets.ftp_host_umadtb }}
+          username: ${{ secrets.ftp_user_umadtb }}
+          password: ${{ secrets.ftp_password_umadtb }}
+          server-dir: /
+          timeout: 36000000
+          #protocol: ftps 
+          #log-level: verbose
+          #dry-run: true 

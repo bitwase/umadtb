@@ -1,0 +1,383 @@
+body{
+height:550px;
+width:900px;
+background: #fff;	
+}
+
+/******* CAMPOS INPUTS *************/
+input[type="text"],input[type="password"],input[type="submit"], select, option, input[type="button"],input[type="date"], textarea{
+    font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+    color:#FFF;
+    font-size:14px;
+    background-color:#4DA9A6;
+    border-radius:10px;
+    text-align:left;
+    border:none;
+    display: none;
+}
+input[type="text"]:hover,input[type="password"]:hover,input[type="submit"]:hover,input[type="button"]:hover, input[type="date"]:hover,textarea:hover{
+    background:#066;
+    color:#FFF;
+}
+form{
+    display: none;
+}
+table{
+    position: relative;
+    font-size: 11px;
+}
+.registros{
+    position: absolute;
+    width: 700px;
+    left: 50%;
+    margin-left:-350px;
+}
+.registros tr{
+    border-top:solid 1px;
+border-bottom: solid 1px;
+border-color:#000;
+border-top-left-radius:15px;
+border-bottom-left-radius:15px;
+-webkit-border-top-left-radius:15px;
+-webkit-border-bottom-left-radius:15px;
+}
+#chmenu{
+    background:#066;
+    color:#FFF;
+    display: none;
+}
+#chmenu:hover{
+    background:#076;
+    color:#FFF;
+}
+
+/***** HEADER *****/
+#banner{
+    position: absolute;
+    height: 100px;
+    width: 900px;
+    left: 50%;
+    margin-left: -450px;
+    top: 2px;
+    border-color: #fff;
+    border-top-style:none;
+    border-bottom-style: none;
+}
+.logo{
+    position: relative;
+    height: 94px;
+    width: 225px;
+    top:5px;
+    left: 5px;
+    border-radius:20px;
+}
+#menu{
+    display: none;
+}
+#impresso{
+	position:absolute;
+	right:5px;
+	top:0px;
+	background:none;
+	font-size:15px;
+	width: 900px;
+	height: 20px;
+	text-align:right;	
+	display:block;
+}
+#table_div{
+	position:relative;
+	top: -30px;
+	border-color: #fff;
+}
+/*
+**** MEIO *****/
+#titulo_meio{
+    position:absolute;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+#inclui_pg{
+    position:absolute;
+    top:50px;
+    height: auto;
+}
+#meio{
+    position: relative;
+    top:160px;
+    width: 900px;
+    left: 50%;
+    margin-left: -450px;
+/*height: auto;*/
+}
+#meio_rel{
+    position: absolute;
+    top:150px;
+    width: 900px;
+    min-height: 75%;
+    border-style: none;
+}
+/***** FOOTER *****/
+#footer{
+    position: absolute;
+    bottom:-20px;
+    height: 20px;
+    width: 900px;
+    left: 50%;
+    margin-left: -450px;
+    border-radius:20px;
+    border-style: solid;
+    border-color: #000;
+    border-top-style:none;
+    border-bottom-style: none;
+    background: #fff;    
+}
+
+#conteudo{
+position:absolute;
+height:auto;
+min-height: 100%;
+width:900px;	
+top:0px;
+left:50%;
+margin-left:-450px;
+background-color:#fff;
+}
+
+/*** LOGIN  loga.php  ***/
+#loga{
+    position: absolute;
+    width: 100px;
+    left: 50%;
+    top:40px;
+    margin-left: -50px;
+}
+#erro_login{
+    position: absolute;
+    width: 350px;
+    left: 50%;
+    margin-left: -175px;
+    color: #f00;
+    font-weight: bold;
+}
+
+#erro{
+    color: #f00;
+    font-weight: bold;
+    z-index: 100;
+}
+#cadastrado{
+    color: #4DA9A6;
+    font-weight: bold;
+    z-index: 100;
+}
+
+/*** CAD EMPRESA ***/
+#cad_empresa{
+    position: absolute;
+    width: 400px;
+    left: 50px;   
+}
+
+/*** LISTA CURSOS  cursos.php ****/
+ #lista_cursos{ /* TABELA 
+    position: absolute;
+    width: 900px;
+    background: #666;
+    float:left;
+    */
+    position: absolute;
+    top:160px;
+    width: 900px;
+    left: 0px;
+    border-radius:20px;
+    border-style: none;
+    border-color: #000;
+    border-top-style:none;
+    border-bottom-style: none;
+    min-height: 75%;
+    
+}#lista_cursosb{ 
+    position: absolute;     
+    top:70px;
+    width: 900px;
+    left: 0px;
+    min-height: 75%;
+    height: auto;
+    
+}
+#lista_cursos ul{
+    list-style: none;
+}
+#lista_cursos ul li{
+    margin:0px auto;
+    float:left;
+}
+.cima_cursos{
+    position: absolute;
+    left: 0px;
+    width: 900px;
+}
+.cod_curso{
+    position: absolute;
+    width: 100px;
+    left: 0px;
+    border: #000;
+    border-style: solid;
+}
+.tt_curso{
+    position: absolute;
+    width: 300px;
+    left:103px;
+    border: #000;
+    border-style: solid;
+}
+.tmp_apx_curso{
+    position: absolute;
+    width: 70px;
+    left:406px;
+    border: #000;
+    border-style: solid;
+}
+.apv_curso{
+    position: absolute;
+    width: 110px;
+    left:479px;
+    border: #000;
+    border-style: solid;
+}
+.and_curso{
+    position: absolute;
+    width: 70px;
+    left:592px;
+    border: #000;
+    border-style: solid;
+}
+.sit_curso{
+    position: absolute;
+    width: 100px;
+    left:665px;
+    border: #000;
+    border-style: solid;
+}
+.aca_curso{
+    position: absolute;
+    width: 80px;
+    left:768px;
+    border: #000;
+    border-style: solid;
+}
+
+.cnome{
+text-align:center;
+vertical-align:middle;
+border-top:solid 1px;
+border-bottom: solid 1px;
+border-color:#000;
+}
+.cnome1{
+text-align:center;
+vertical-align:middle;
+border-top:solid 1px;
+border-bottom: solid 1px;
+border-color:#000;
+border-top-left-radius:15px;
+border-bottom-left-radius:15px;
+-webkit-border-top-left-radius:15px;
+-webkit-border-bottom-left-radius:15px;
+}
+.cnome2{
+text-align:center;
+vertical-align:middle;
+border-top:solid 1px;
+border-bottom: solid 1px;
+border-color:#000;
+border-top-right-radius:15px;
+border-bottom-right-radius:15px;
+-moz-border-top-right-radius:15px;
+-moz-border-bottom-right-radius:15px;
+}
+
+#conteudo tr:hover{
+    background:#666;
+ } 
+
+ .impar{
+     border-style: solid;
+border-color:#000;
+}
+.par{
+border-top:solid 1px;
+border-bottom: solid 1px;
+border-color:#000;
+    
+}
+.quantias{
+    font-size: 8px;
+    border-style: groove;
+    background: #ccc;
+    position: absolute;
+    right: 40px;
+    top:-130px;
+    color: #666;
+}
+#chart_div{
+    position: absolute;
+    top:-130px;
+    width:200px;
+    height:150px;
+    background: #ccc;
+}
+#chart_div2{
+    position: absolute;
+    right: 0px;
+    top:-130px;
+    width:400px;
+    height:300px;  
+}
+#table_div{
+    border-radius: 20px;
+	top:10px;
+}
+
+#obs{
+	display:none;
+}
+#observacoes_us_print{
+display:block;
+}
+#bt_editar{
+display:none;
+}
+
+/* RODAPÉ */
+#rodape {
+display:none;
+	background:#FFF;
+	width:900px;
+	height:30px;
+	position: absolute;
+	bottom: 0; 
+	border-width: 1px 0;
+	text-align:center;
+	border-top-left-radius:9px;
+	border-top-right-radius:9px;
+	box-shadow:0px 0px 5px #000;
+	}
+#rodape_imprime{
+position:relative;
+display:block;
+	background:#FFF;
+	width:900px;
+	height:30px;
+	position: absolute;
+	bottom: 0; 
+	border-width: 1px 0;
+	text-align:center;
+	border-top-left-radius:9px;
+	border-top-right-radius:9px;
+	box-shadow:0px 0px 5px #000;
+	}
+
+
