@@ -261,7 +261,6 @@
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -284,9 +283,10 @@
     </nav>
 
     <div class="jumbotron text-center">
-        <h1>RETIRO UMADTB</h1>
-    </div>
+        <h1><span style="line-height: 60px; vertical-align:bottom">RETIRO</span> <img src="arquivos/imagens/logo.png" height="100px"></h1>
 
+        <a href="#inscricao"><button type="button" name="" id="" class="btn btn-primary btn-lg ">INSCREVA-SE</button></a>
+    </div>
     <!-- Container (About Section) -->
     <div id="quando" class="container-fluid">
         <div class="row">
@@ -327,11 +327,34 @@
     </div>
 
     <!-- Container (Inscrição Section) -->
+
+    <div id="alerta" class="alert alert-danger" style="position: fixed; width:400px; height: 250px; top:0; bottom:0; left:0;
+    right:0; margin:auto; z-index:5; font-size: 22px; display:none" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span id="msgAlerta"></span>
+        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" onclick="fechaAlerta()">ENTENDIDO</button>
+    </div>
+
+
     <div id="inscricao" class="container-fluid bg-grey">
         <h1 class="text-center">INSCRIÇÃO</h1>
-        <div class="row">
+
+        <div id="alerta" class="alert alert-success" style="width:100%; height: 100%; font-size: 22px; display:block" role="alert">
+            <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+            <span id="msgAlerta">Inscrição realizada com sucesso.</span>
+            <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" onclick="fechaAlerta()">ENTENDIDO</button>
+        </div>
+
+        <div class="row formulario">
             <div class="col-sm-12 slideanim">
                 <div class="row">
+                    <div class="col-sm-3 form-group">
+                        <div class="form-group">
+                            <label for="cmpRG">RG</label>
+                            <input type="text" class="form-control rg" name="cmpRG" id="cmpRG" aria-describedby="helpId" placeholder="">
+                        </div>
+                    </div>
+
                     <div class="col-sm-6 form-group">
                         <div class="form-group">
                             <label for="cmpNome">Nome</label>
@@ -339,12 +362,6 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-3 form-group">
-                        <div class="form-group">
-                            <label for="cmpRG">RG</label>
-                            <input type="text" class="form-control rg" name="cmpRG" id="cmpRG" aria-describedby="helpId" placeholder="">
-                        </div>
-                    </div>
                     <div class="col-sm-3 form-group">
                         <div class="form-group">
                             <label for="cmpNascimento">Nascimento</label>
@@ -409,7 +426,7 @@
                     <div class="col-sm-3 form-group">
                         <div class="form-group">
                             <label for="cmpTelefone">Telefone</label>
-                            <input type="text" class="form-control" name="cmpTelefone" id="cmpTelefone" aria-describedby="helpId" placeholder="">
+                            <input type="text" class="form-control" name="cmpTelefone" id="cmpTelefone" aria-describedby="helpId" placeholder="(99)9999-9999" onkeyup="validaFone()">
                         </div>
                     </div>
 
@@ -423,12 +440,11 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 form-group">
-                        <button type="button" name="" id="" class="btn btn-success btn-lg btn-block">Confirmar</button>
+                        <button type="button" name="" id="" class="btn btn-success btn-lg btn-block" onclick="gravar()">Confirmar</button>
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- Image of location/map -->
         <footer class="container-fluid text-center">
             <a href="#myPage" title="To Top">
@@ -443,6 +459,7 @@
 
         <script>
             $(document).ready(function() {
+                $("#cmpTelefone").mask("(99)9999-9999");
                 // Add smooth scrolling to all links in navbar + footer link
                 $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
                     // Make sure this.hash has a value before overriding default behavior
@@ -477,6 +494,21 @@
                 });
             });
 
+            function validaFone() {
+                var t = $("#cmpTelefone").val();
+
+                if (t.length < 5) {
+                    $("#cmpTelefone").mask("(99)9999-9999");
+                }
+                if (t.length == 5) {
+                    if (t[4] == 9) {
+                        $("#cmpTelefone").mask("(99)99999-9999");
+                    } else {
+                        $("#cmpTelefone").mask("(99)9999-9999");
+                    }
+                }
+            }
+
             function getEndereco() {
 
                 $("#cmpLogradouro").val("...");
@@ -503,6 +535,76 @@
                     $("#cmpUf").val(uf);
                     //$().val();
                 });
+            }
+
+
+            function gravar() {
+                var rg = $("#cmpRG").val();
+                var nome = $("#cmpNome").val();
+                var nascimento = $("#cmpNascimento").val();
+                var cep = $("#cmpCEP").val();
+                var logradouro = $("#cmpLogradouro").val();
+                var num = $("#cmpNumero").val();
+                var complemento = $("#cmpCpl").val();
+                var bairro = $("#cmpBairro").val();
+                var cidade = $("#cmpCidade").val();
+                var uf = $("#cmpUf").val();
+                var telefone = $("#cmpTelefone").val();
+                var email = $("#cmpEmail").val();
+
+                //validar campos obrigatórios
+                if (nome == "") {
+                    $("#msgAlerta").html("Campo 'Nome' deve ser preenchido");
+                    $("#alerta").fadeIn("slow");
+                    return false;
+                }
+
+                if (nascimento == "") {
+                    $("#msgAlerta").html("Campo 'Nascimento' deve ser preenchido");
+                    $("#alerta").fadeIn("slow");
+                    return false;
+                }
+
+                if (cep == "") {
+                    $("#msgAlerta").html("Campo 'CEP' deve ser preenchido");
+                    $("#alerta").fadeIn("slow");
+                    return false;
+                }
+
+                if (telefone == "") {
+                    $("#msgAlerta").html("Campo 'Telefone' deve ser preenchido");
+                    $("#alerta").fadeIn("slow");
+                    return false;
+                }
+
+                if (email == "") {
+                    $("#msgAlerta").html("Campo 'Email' deve ser preenchido");
+                    $("#alerta").fadeIn("slow");
+                    return false;
+                }
+
+                $.post('admin/registraInscricao.php', {
+                    tk: 'b5e25c4c183f366901ebbbb73412faf6',
+                    evento: '1',
+                    rg: rg,
+                    nome: nome,
+                    nascimento: nascimento,
+                    cep: cep,
+                    logradouro: logradouro,
+                    num: num,
+                    complemento: complemento,
+                    bairro: bairro,
+                    uf: uf,
+                    telefone: telefone,
+                    email: email,
+                }, function(response) {
+                    alert(response);
+                });
+            }
+
+            function fechaAlerta() {
+                $("#msgAlerta").html("");
+                $("#alerta").fadeOut("slow");
             }
         </script>
 
