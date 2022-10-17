@@ -339,10 +339,10 @@
     <div id="inscricao" class="container-fluid bg-grey">
         <h1 class="text-center">INSCRIÇÃO</h1>
 
-        <div id="alerta" class="alert alert-success" style="width:100%; height: 100%; font-size: 22px; display:block" role="alert">
+        <div id="alertaOk" class="alert alert-success" style="width:100%; height: 100%; font-size: 22px; display:none" role="alert">
             <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
             <span id="msgAlerta">Inscrição realizada com sucesso.</span>
-            <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" onclick="fechaAlerta()">ENTENDIDO</button>
+
         </div>
 
         <div class="row formulario">
@@ -598,7 +598,16 @@
                     telefone: telefone,
                     email: email,
                 }, function(response) {
-                    alert(response);
+                    //alert(response);
+                    if (response == "OK") {
+                        $("#inscricao .alert").fadeIn();
+                        $("#inscricao .formulario").fadeOut();
+                    }
+
+                    if (response != "OK") {
+                        $("#msgAlerta").html("Ocorreu algum erro ao realizar o cadastro. Verifique todos os dados e tente novamente. Se o erro persistir, entrar em contato com o suporte.");
+                        $("#alerta").fadeIn("slow");
+                    }
                 });
             }
 

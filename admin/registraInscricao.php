@@ -23,6 +23,23 @@ $uf = $_POST['uf'];
 $telefone = $_POST['telefone'];
 $email = $_POST['email'];
 
+$dados = "
+Evento: $evento <br> 
+RG: $rg <br> 
+Nome: $nome <br>
+Nascimento: $nascimento <br>
+CEP: $cep <br>
+Logradouro: $logradouro <br>
+Num: $num <br>
+Complemento: $complemento <br>
+Bairro: $bairro <br>
+Cidade: $cidade <br>
+UF: $uf <br>
+Telefone: $telefone <br>
+Email: $email <br>
+";
+mysql_query("insert into tentativa_cadastro (data, post) values(now(),'$dados')");
+
 //verificar se cadsatro já existe pelo RG informado
 $ve = mysql_num_rows(mysql_query("select * from tb_inscritos where rg = '$rg'"));
 if ($ve == "0") {
