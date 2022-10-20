@@ -1,0 +1,15 @@
+﻿.k-grid-toolbar
+{
+    background: #053969 !important;
+}
+
+.k-button {
+    color: #fff;
+   	background:rgba(7, 72, 133, 0.8);
+    border-color: #074885;
+    box-shadow: none
+}
+
+.k-grid .k-grouping-header {
+    color: rgba(255,255,255, 0.5);
+}

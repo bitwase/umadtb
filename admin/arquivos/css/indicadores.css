@@ -1,0 +1,250 @@
+/*
+azul #1960a1;
+verde: #64b550;
+*/
+
+#indicadores{
+	position:relative;
+	width:100%;
+	height:auto;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+.clear { clear: both; }
+
+/* TABELA DA DIREITA... ACORDION*/
+
+/* Style the buttons that are used to open and close the accordion panel */
+.divAcoesInicio {
+    background-color: #eee;
+    text-align:center;
+    color: #444;
+    cursor: pointer;
+    padding: 4px;
+    width: 880px;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.divAcoes {
+	position: relative;
+    background-color: #eee;
+    text-align:center;
+    color: #444;
+    cursor: pointer;
+    padding: 4px;
+    width: 880px;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.divAcoes .active, .divAcoes:hover {
+    background-color: #ccc;
+}
+
+.divAcoes:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.divAcoes:hover {
+    background-color: #ccc;
+}
+.divAcoes .active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel{
+	position:relative;
+    padding: 0 0px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    top:0px;
+    width:100%;
+    left:0px;
+}
+
+#indicadores{
+	font-size:12px;
+	vertical-align: middle;
+	text-align: center;
+}
+.i0{
+	position:relative;
+	top:0px;
+	left:0px;
+	width:0px;
+	height:0px;
+}	
+.destaque{
+	background:#00858A;
+	color: #fff;
+}
+.destaque1{
+	background:#666;
+	color: #fff;
+}
+.destaque2{
+	background:#ccc;
+	color: #000;
+}
+.i1{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:180px;
+	height:20px;
+	border:solid 1px #fff;
+	vertical-align: middle;
+}
+
+.i2{
+	position:absolute;
+	top:0px;
+	left:180px;
+	width:50px;
+	height:20px;
+	
+	border:solid 1px #fff;
+	vertical-align: middle;
+}
+
+.i3{
+	position:absolute;
+	top:0px;
+	left:230px;
+	width:50px;
+	height:20px;
+	
+	border:solid 1px #fff;
+	vertical-align: middle;
+}
+.i4{
+	position:absolute;
+	top:0px;
+	left:280px;
+	width:50px;
+	height:20px;
+	
+	border:solid 1px #fff;
+	vertical-align: middle;
+}
+.i5{
+	position:absolute;
+	top:0px;
+	left:330px;
+	width:50px;
+	height:20px;
+	
+	border:solid 1px #fff;
+	vertical-align: middle;
+}
+.i6{
+	position:absolute;
+	top:0px;
+	left:380px;
+	width:50px;
+	height:20px;
+	
+	border:solid 1px #fff;
+	vertical-align: middle;
+}
+.i7{
+	position:absolute;
+	top:0px;
+	left:430px;
+	width:50px;
+	height:20px;
+	
+	border:solid 1px #fff;
+	vertical-align: middle;
+}
+.i8{
+	position:absolute;
+	top:0px;
+	left:480px;
+	width:50px;
+	height:20px;
+	
+	border:solid 1px #fff;
+	vertical-align: middle;
+}
+.i9{
+	position:absolute;
+	top:0px;
+	left:530px;
+	width:50px;
+	height:20px;
+	
+	border:solid 1px #fff;
+	vertical-align: middle;
+}
+.i10{
+	position:absolute;
+	top:0px;
+	left:580px;
+	width:50px;
+	height:20px;
+	
+	border:solid 1px #fff;
+	vertical-align: middle;
+}
+.i11{
+	position:absolute;
+	top:0px;
+	left:630px;
+	width:50px;
+	height:20px;
+	
+	border:solid 1px #fff;
+	vertical-align: middle;
+}
+.i12{
+	position:absolute;
+	top:0px;
+	left:680px;
+	width:50px;
+	height:20px;
+	
+	border:solid 1px #fff;
+	vertical-align: middle;
+}
+.i13{
+	position:absolute;
+	top:0px;
+	left:730px;
+	width:50px;
+	height:20px;
+	
+	border:solid 1px #fff;
+	vertical-align: middle;
+}
+.i14{
+	position:absolute;
+	top:0px;
+	left:780px;
+	width:50px;
+	height:20px;
+	
+	border:solid 1px #fff;
+	vertical-align: middle;
+}
+.i15{
+	position:absolute;
+	top:0px;
+	left:830px;
+	width:68px;
+	height:20px;
+	
+	border:solid 1px #fff;
+	vertical-align: middle;
+}

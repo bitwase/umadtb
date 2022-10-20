@@ -1,0 +1,120 @@
+﻿boletos -> ver padrões e acessos - validar
+
+cadastro de clientes -> mais de uma opção de email e telefone
+
+
+gerador de senha com min, mais, num e especial 5 caracteres
+
+regra para alerta de tentativas de login
+    ->parametrizar quantidades
+    ->enviar email
+
+campo nota fiscal dentro da obra
+        -necessário campo para informar mais de uma NF, onde o valor final deve ser igual ao valor da obra (campo a ser incluso)
+
+    pensar em forma de incluir uma obra "filha", totalizar o valor na obra principal
+
+    dashboard -> notas não Atribuídas
+
+Ajustes:
+15-09-2022
+    # 1- Não pode ter dois ID de clientes com o mesmo CNPJ;
+
+    # 2- Administração > Clientes
+    Não esta exibindo o ID do cliente na Coluna "cliente";
+    Para o usuário "Salete", não está exibindo o ID mesmo habilitando a coluna correspondente;
+
+    # 3- Corrigir nº do centro de custos (NÃO ESTÁ MOSTRANDO O N° ) dentro do cliente, na coluna "Cliente.centro de custos";
+
+    # 4- Alterar no centro de custos "Materiais em Estoque" para Materiais do estoque";
+
+    # 5- Contas a pagar - Alterar informações (tirar obrigatoriedade de informar categoria, Subcategoria, Centro de Custos)
+
+    #6- Administração > configurações > Contas a Pagar Automático - XML Importado
+    Dar opção de deixar os campos "categoria" "Subcategoria" "Centro de Custo" em branco (sem valor associado)
+
+    #7- Administração > Centro de custos
+   Incluir o "lápis" para que seja possível visualizar o relaório e/ou editar.
+   Na Coluna "Cliente.Centro de custos" inluir o ID do centro de custos logo após o ID do Cliente)
+   Atual: "IDcliente. - Nome do centro de custo" - deixar: ID cliente.ID do Centro de Custo - Nome do centro de custo"
+
+#REVER CADASTRO DE CENTRO DE CUSTO
+    
+#controle financeiro - inserir conta no filtro
+
+#conciliação - mostrar o período 
+
+#custo engerede - adicionar opção para PDF e excel
+
+#criar forma de permissionamento de acessos
+#    -ao adicionar usuário, já adicionar o dashboard por padrão.
+
+#-Job Atualizar Status das obras e faturas;
+#-Emitir alertas via email.
+
+#    -Lista de Cursos
+    
+#    -emitir lista também com os cursos realizados por colaborador
+
+#    financeiro -> incluir opção para conciliação com arquivo .ofx
+    
+#    ---- incluir regras para ao vincular item com centro de custo, verificar se for engerede e habilitar categoria e subcategoria financeiro;
+
+    #cadastro de contas
+
+    #Incluir tela de parametrização das configurações
+
+    #habilitar usuário ou email
+    
+    #adicionar mão de obra -> voltar com tela aberta após incluir
+
+    #inclusão de mão de obra -> opção para permitir inserir mais de uma linha e mais de um colaborador por vez. tipo de hora dividir em coluna para tipo e coluna para %, e manter um campo "aberto"
+    
+    # menu->NF recebidas -> alterar para "Consultas Notas"
+    # financeiro -> inserir opção para anexar
+financeiro->
+    # Ajsutar subcategorias que não estão carregando
+    # -algumas categorias considera inválido também
+    # -ver forma de validar com consultas
+
+    # VAlores -> separar milhar por . e decimal com ,
+
+
+    # incluir colunas em config para  $config['catFatura'], $config['subCatFatura'], $config['centroFatura']
+
+    # incluir filtros nas contas para permitir filtrar por categoria, subcategoria, centro de custo e descrição (like)
+
+
+    # colaborador-> remover valores (exceto hora)
+
+    # controle financeiro -> incluir filtro por categoria
+
+
+    #   tela de lista de obras -> substituir coluna obra(n) e nome da obra pela iformação do centro de custo
+
+
+    #    Incluir campo para valor orçado
+    #        calcular % 
+
+    #   pedidos e orçamento em obras -> upload de arquivo.
+    #        -ícones para download
+
+    #   cursos -> incluir instituição
+
+
+    #    obras -> inserir campo para anexos
+    #        -Inserir opção para excluir anexo. Confirmar antes de executar.
+
+    #    -inserir numero sequencial por cliente
+
+    #    cadastro de centro de custo | v.centroCusto |
+    #        -incluir coluna para vincular centro de custo obra com cliente, e mostrar o nome do cliente na tabela
+
+     #   material em estoque
+     #   -inserir opção para preenchimento com dados disponíveis em "estoque", e preencher os outros campos (cod, descricao, custo)
+     #   quando for código mostrar também o fornecedor, ex "123 - FORNECEDOR"
+
+#                obras em andamento
+#                obras em atraso
+#                cursos a vencer -> 10 dias antes
+#                cursos vencidos

@@ -1,16 +1,21 @@
-  $(function() {
-    $('.uf').mask('AA');
-    $('.date').mask('00/00/0000',{placeholder: "DD/MM/AAAA"});
-    $('.hora').mask('00:00',{placeholder:"HH:MM"});
+$(function() {
+    $('.date').mask('00/00/0000', {placeholder: "__/__/____"});
+    $('.mesAno').mask('00/0000', {placeholder: "__/____"});
+    $('.hora').mask('00:00');
+    $('.hour').mask('00:00');
     $('.time').mask('00:00:00');
     $('.date_time').mask('00/00/0000 00:00:00');
-    $('.cep').mask('00000-000',{placeholder: "00000-000"});
+    $('.datahora').mask('00/00/0000 00:00');
+    $('.cep').mask('00000-000');
     $('.phone').mask('0000-0000');
+    $('.tel').mask('(00)0000-0000');
+    $('.cnpj').mask('00.000.000/0000-00', {reverse: true});
     $('.phone_with_ddd').mask('(00) 0000-0000');
     $('.phone_us').mask('(000) 000-0000');
     $('.mixed').mask('AAA 000-S0S');
     $('.ip_address').mask('099.099.099.099');
     $('.percent').mask('##0,00%', {reverse: true});
+    $('.valor').mask('####0.00', {placeholder: "R$0.00", reverse: true});
     $('.clear-if-not-match').mask("00/00/0000", {clearIfNotMatch: true});
     $('.placeholder').mask("00/00/0000", {placeholder: "__/__/____"});
     $('.fallback').mask("00r00r0000", {
@@ -43,15 +48,10 @@
       $('.crazy_cep').mask(mask, options);
     }});
 
-    $('.cpf').mask('000.000.000-00', {reverse: true, placeholder: "000.000.000-00"});
-    $('.cnpj').mask('00.000.000/0000-00', {reverse: true, placeholder: "00.000.000/0000-00"});
-    $('.rg').mask('000.000.000-0', {reverse: true, placeholder: "00.000.000-0"});
+    $('.cpf').mask('000.000.000-00', {reverse: true});
     $('.money').mask('#.##0,00', {reverse: true});
-    $('.vlr').mask('#####.00', {reverse: true, placeholder: "R$0.00"});
-	$('.numero').mask('####', {reverse: true, placeholder: "000"});
-    $('.fone').mask('(00)0000-0000#',{placeholder: "(xx)1234-5678"});
-    $('.fone9').mask('(00)00000-0000',{placeholder: "(xx)91234-5678"});
-    $('.fone2').mask('(00)00000-0000',{placeholder: "(xx)91234-5678"});
+    $('.vlr').mask('###0.00', {reverse: true, placeholder: "0.00"});
+
     var SPMaskBehavior = function (val) {
       return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
     },

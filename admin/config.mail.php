@@ -4,22 +4,39 @@ Classe mailer.
 Adaptado por Wellington Ulisses Santos, para uso na empresa Serdia.
 */
 //echo "<a href='../../arquivos/mailer/PHPMailerAutoload.php'>testes</a>";
-include_once("../../arquivos/mailer/PHPMailerAutoload.php");
+include_once("../arquivos/mailer/PHPMailerAutoload.php");
 
 // Inclui o arquivo class.phpmailer.php localizado na pasta phpmailer
-require_once("../../arquivos/mailer/class.phpmailer.php");
+require_once("../arquivos/mailer/class.phpmailer.php");
 // Inicia a classe PHPMailer
 $mail = new PHPMailer();
 // Define os dados do servidor e tipo de conexão
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+/*
 $mail->IsSMTP(); // Define que a mensagem será SMTP
-$mail->Host = "$cnf_smtp"; // Endereço do servidor SMTP
+$mail->Host = "smtp.gmail.com"; // Endereço do servidor SMTP
 $mail->SMTPAuth = true; // Usa autenticação SMTP? (opcional)
-$mail->Username = "$cnf_smtp_usr"; // Usuário do servidor SMTP
-$mail->Password = "$cnf_smtp_senha"; // Senha do servidor SMTP
+$mail->Username = 'ti.serdia@gmail.com'; // Usuário do servidor SMTP
+$mail->Password = 't3s2rd31@2018'; // Senha do servidor SMTP
 // Define o remetente
-$mail->From = "$cnf_smtp_envia"; // Seu e-mail
-$mail->FromName = "$cnf_smtp_nome"; // Nome que aparecerá p/ quem receber o email
+$mail->From = "ti.serdia@gmail.com"; // Seu e-mail
+$mail->FromName = "Chamados"; // Nome que aparecerá p/ quem receber o email
+*/
+
+/*
+$mail->IsSMTP(); // Define que a mensagem será SMTP
+$mail->Host = "smtp.office365.com"; // Endereço do servidor SMTP
+$mail->SMTPAuth = true; // Usa autenticação SMTP? (opcional)
+$mail->Port = 587;
+$mail->Username = 'noreply@serdia.com.br'; // Usuário do servidor SMTP
+$mail->Password = 'n0r3plys&rd!@'; // Senha do servidor SMTP
+*/
+include "../mail.geral.php";
+// Define o remetente
+$mail->From = "noreply@serdia.com.br"; // Seu e-mail
+$mail->FromName = "Controle de Licenças"; // Nome que aparecerá p/ quem receber o email
+
+
 /*
 Necessário inserir no local onde será enviado o email:
 -colocar as opções abaixo

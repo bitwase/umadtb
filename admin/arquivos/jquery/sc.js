@@ -222,9 +222,49 @@ shortcut = {
 	}
 }
 
+
 //adiciona shortcurt
-/*shortcut.add('enter',function() 
+shortcut.add('F1',function() 
 {
-alert('Enter');
+//	alert("Foi pressionado a tecla 'U'");
+	Shadowbox.init({players:['iframe']});
+	Shadowbox.open({
+    content: 'procedimento.php',
+            player: "iframe",
+            type: "iframe",
+            title: "Ajuda",
+            height: 500,
+            width: 900,
+        });
+	//location.href="ajuda.php", rel="Shadowbox[tela]";
 });
-*/
+
+shortcut.add('Alt+A',function() 
+{
+location.href="index.php?pg=abertos"
+});
+
+shortcut.add('Alt+F',function() 
+{
+location.href="index.php?pg=fechados"
+});
+
+shortcut.add('Alt+N',function() 
+{
+location.href="index.php?pg=novo.chamado"
+});
+
+shortcut.add('Alt+R',function() 
+{
+location.href="index.php?pg=relatorio"
+});
+
+shortcut.add('Alt+S',function() 
+{
+location.href="index.php?pg=sugestao"
+});
+
+shortcut.add('Alt+M',function() 
+{
+location.href="index.php?pg=altera.senha"
+});

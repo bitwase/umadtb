@@ -583,7 +583,7 @@
                     return false;
                 }
 
-                $.post('admin/registraInscricao.php', {
+                $.post('admin/admin/registraInscricao.php', {
                     tk: 'b5e25c4c183f366901ebbbb73412faf6',
                     evento: '1',
                     rg: rg,

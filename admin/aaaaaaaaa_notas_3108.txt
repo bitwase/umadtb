@@ -1,0 +1,3 @@
+incluir colunas em config para  $config['catFatura'], $config['subCatFatura'], $config['centroFatura']
+
+incluir filtros nas contas para permitir filtrar por categoria, subcategoria, centro de custo e descrição (like)

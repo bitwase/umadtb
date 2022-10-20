@@ -1,0 +1,1126 @@
+/*
+Cor anterior: #4DA9A6
+Cor Atual: #00858A
+*/
+/*Linhas abaixo ajusta barra de rolagem para cor verde*/
+tab {
+	padding-left: 5em;
+}
+
+label {
+	font-weight: bold;
+}
+
+/**** MASCARA *****/
+
+#mascara {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	background: #000;
+	z-index: 77777;
+}
+
+#mostra,
+#mostra2 {
+	position: fixed;
+	background: #ccc;
+	z-index: 14;
+	width: 300px;
+	border-radius: 4px;
+	opacity: 0.9;
+}
+
+.mostra,
+.mostra2 {
+	position: fixed;
+	margin: 5px;
+	z-index: 15;
+	opacity: 1.0;
+	padding: 5px;
+	height: auto;
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-o-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+::-webkit-scrollbar-track {
+	background-color: #ccc;
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px #000;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+	background: #F4F4F4;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #004547;
+	border-radius: 5px;
+}
+
+@font-face {
+	font-family: 'ubuntulight';
+	src: url('../fontes/ubuntu_l-webfont.eot');
+	src: url('../fontes/ubuntu_l-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fontes/ubuntu_l-webfont.woff2') format('woff2'),
+		url('../fontes/ubuntu_l-webfont.woff') format('woff'),
+		url('../fontes/ubuntu_l-webfont.ttf') format('truetype'),
+		url('../fontes/ubuntu_l-webfont.svg#ubuntulight') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+.pendente {
+	background-color: rgba(255, 0, 0, 0.5) !important;
+}
+
+.parcial {
+	background-color: rgba(255, 255, 0, 0.5) !important;
+}
+
+.atendido {
+	background-color: rgba(50, 205, 50, 0.5) !important;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #ddd;
+	color: #666;
+	font: 70%/0.4;
+	/*Verdana, Arial, Helvetica, sans-serif;*/
+	font-family: ubuntulight;
+	font-size: 14px;
+	text-align: center;
+}
+
+/* Defini��o padr�o de link*/
+a:link,
+a:visited {
+	color: #00858A;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #727376;
+	text-decoration: none;
+}
+
+#calendar a:link,
+#calendar a:visited {
+	color: #000;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #727376;
+	text-decoration: none;
+}
+
+#refresh {
+	position: absolute;
+	right: 5px;
+	top: 120px;
+	border-radius: 15px;
+	height: 30px;
+	width: 30px;
+	background: #fff;
+	box-shadow: 0px 0px 30px #ccc;
+	z-index: 10;
+}
+
+#tudo {
+	width: 100%;
+	position: relative;
+	/*Contexto de posicionamento */
+	background: #fff;
+	margin: 0 auto;
+	text-align: left;
+	min-height: 100%;
+	/**/
+	border-width: 0 1px;
+	box-shadow: 0px 0px 5px #000;
+}
+
+* html #tudo {
+	height: 100%;
+}
+
+#conteudo {
+	padding-bottom: 30px;
+}
+
+#topo {
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	text-align: center;
+	padding-top: 1px;
+	top: 0px;
+	z-index: 20;
+}
+
+#principal {
+	position: relative;
+	width: calc(100% - 300px);
+	padding-left: 0px;
+	float: left;
+	padding-top: 10px;
+	text-align: justify;
+	top: 50px;
+}
+
+#rodape_imprime {
+	display: none;
+}
+
+#rodape {
+	background: #FFF;
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	bottom: -19px;
+	border-width: 1px 0;
+	text-align: center;
+	border-top-left-radius: 9px;
+	border-top-right-radius: 9px;
+	box-shadow: 0px 0px 5px #000;
+	font-size: 12px;
+	z-index: 100;
+}
+
+#rodape p {
+	margin: 0;
+	font-weight: bold;
+	color: #060;
+}
+
+.clear {
+	clear: both;
+}
+
+/* ALTERA��ES */
+/* CIMA */
+/*N�O MOSTRAR NA TELA*/
+#impresso {
+	display: none;
+}
+
+/*#banner{
+	position: absolute;
+	height: 150px;
+	width: 100%;
+	border-style: none;
+	left: 50%;
+	background:#fff;
+	margin-left: -450px;
+	top: -1px;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+	box-shadow:0px 0px 5px #000;
+}*/
+.banner {
+	position: absolute;
+	height: 60px;
+	width: 100%;
+	border-style: none;
+	background: #004547;
+	top: 0px;
+
+}
+
+#mens {
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+	text-align: left;
+	color: #fff;
+}
+
+.logo {
+	position: relative;
+	height: 94px;
+	width: 225px;
+	top: 15px;
+	left: 5px;
+	border-radius: 20px;
+}
+
+#titulo {
+	position: absolute;
+	left: 300px;
+	top: 30px;
+	font-size: 35px;
+}
+
+.tt_pg {
+	font-size: 25px;
+}
+
+#nome_saud {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+/* MENU */
+.menu {
+	position: absolute;
+	height: 40px;
+	width: auto;
+	border-style: none;
+	border-color: #000;
+	bottom: 0px;
+	background: #ccc;
+	border-radius: 5px;
+	z-index: 1000;
+	text-align: left;
+	transition: 0.5s;
+}
+
+.menu2 {
+	position: fixed;
+	height: 40px;
+	width: auto;
+	border-style: none;
+	border-color: #000;
+	top: 0px;
+	background: #ccc;
+	border-radius: 5px;
+	z-index: 1000;
+	text-align: left;
+	transition: 0.5s;
+}
+
+#localMenu {
+	height: 5px;
+	float: left;
+	width: 250px;
+	position: relative;
+	z-index: 50;
+}
+
+.lg2 {
+	display: block;
+	border-radius: -20;
+	transition: 1s;
+}
+
+.lg1 {
+	opacity: 0;
+	/*display:none;*/
+	transition: 1s;
+	width: 0px;
+}
+
+#loga {
+	position: fixed;
+	width: 300px;
+	height: 200px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 15px #000;
+}
+
+#conteudo_loga {
+	padding-bottom: 30px;
+	background: #fff;
+
+}
+
+#meio {
+	position: absolute;
+	top: 160px;
+	width: 900px;
+	left: 50%;
+	background: #fff;
+	margin-left: -450px;
+	border-radius: 20px;
+	border-style: none;
+	border-color: #000;
+	border-top-style: none;
+	border-bottom-style: none;
+	min-height: 75%;
+	box-shadow: 0px 0px 5px #000;
+}
+
+/* ESCONDER CONTE�DO */
+.esconde {
+	background: #ccc;
+	font-size: 14px;
+}
+
+/* BOT�ES */
+.bt {
+	width: 20px;
+	height: 20px;
+	background: #00858A;
+	border-radius: 20px;
+}
+
+.bt:hover {
+	width: 20px;
+	height: 20px;
+	background: #00858A;
+	border-radius: 20px;
+	box-shadow: 0px 0px 15px #000;
+}
+
+.icones {
+	height: 20px;
+	width: 20px;
+	border-radius: 20px;
+}
+
+#alt_senha {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	margin-left: 50%;
+	left: -100px;
+}
+
+#inf {
+	height: 300px;
+	overflow: auto;
+	box-shadow: 0px 0px 20px #000;
+	border-radius: 15px;
+}
+
+#novos,
+#notificacoes {
+	position: absolute;
+	top: 110px;
+	height: 100%;
+	width: 100%;
+	z-index: 20000;
+	background: #ccc;
+	border-radius: 20px;
+	opacity: 0.95;
+}
+
+#fecha {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 30px;
+	width: 30px;
+	border-radius: 25px;
+	background: #f00;
+}
+
+.nv {
+	/*ver chamados nao visualizados ainda*/
+	background: #fff;
+	font-size: 20px;
+	left: 30px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+}
+
+#alerta {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background: #fff;
+	width: 400px;
+	height: 250px;
+	border-radius: 5px;
+	padding: 15px;
+	z-index: 9999999999;
+}
+
+#addCategoria,
+#addgrupo,
+#addCentro {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background: #fff;
+	width: 350px;
+	height: 400px;
+	border-radius: 5px;
+	padding: 15px;
+	z-index: 999999999;
+}
+
+#inativaConta,
+#inativaCategoria {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background: #fff;
+	width: 350px;
+	height: 350px;
+	border-radius: 5px;
+	padding: 15px;
+	z-index: 99999999;
+	overflow: auto;
+}
+
+#atribuirCentroNF,
+#atribuirCentro,
+#editarCentro,
+#novaProjeto,
+#campoLog,
+#campoAnexo,
+#editaArquivo,
+#removeAnexo {
+	position: fixed;
+	display: none;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background: #fff;
+	width: 620px;
+	height: 500px;
+	border-radius: 5px;
+	padding: 15px;
+	z-index: 99999999;
+	overflow: auto;
+}
+
+#editaArquivo {
+	width: 620px;
+	height: 300px;
+}
+
+#incluiContato {
+	position: fixed;
+	display: none;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background: #fff;
+	width: 620px;
+	height: 200px;
+	border-radius: 5px;
+	padding: 15px;
+	z-index: 99999999;
+	overflow: auto;
+}
+
+#atribuirCentro,
+#editarCentro {
+	z-index: 100000000;
+	width: 750px;
+}
+
+#telaProjeto {}
+
+#telaProjeto .titulo {
+	text-align: center;
+}
+
+#materialComprado .container .titulo {
+	border-style: solid;
+	border-width: 1px;
+	font-weight: bold;
+}
+
+.alerta-cima-direita,
+.alerta-direita-cima {
+	position: fixed !important;
+	display: none;
+	right: 10px;
+	top: 70px;
+	z-index: 9999999;
+}
+
+/* FINANCEIRO */
+
+#resumoFinanceiro {
+	position: relative;
+	float: left;
+	width: 520px;
+	height: 150px;
+	left: 15px;
+}
+
+#resumoEntrada {
+	position: relative;
+	float: left;
+	margin-left: 10px;
+	width: 160px;
+	height: 150px;
+	right: 5px;
+	border: 2px solid #64b550;
+	border-radius: 8px;
+}
+
+#resumoSaida {
+	position: relative;
+	float: left;
+	margin-left: 10px;
+	width: 160px;
+	height: 150px;
+	right: 5px;
+	border: 2px solid #ff1a1a;
+	border-radius: 8px;
+}
+
+#resumoSaldo {
+	position: relative;
+	float: left;
+	margin-left: 10px;
+	width: 160px;
+	height: 150px;
+	right: 5px;
+	border: 2px solid #1960a1;
+	border-radius: 8px;
+}
+
+.cima_entrada,
+.sub_entrada {
+	width: 100%;
+	height: 20px;
+	background: #64b550;
+	text-align: center;
+	vertical-align: center;
+	color: #fff;
+}
+
+.cima_saida,
+.sub_saida {
+	width: 100%;
+	height: 20px;
+	background: #ff1a1a;
+	text-align: center;
+	font-size: 12px;
+	color: #fff;
+}
+
+.cima_saldo,
+.sub_saldo {
+	width: 100%;
+	height: 20px;
+	background: #1960a1;
+	text-align: center;
+	color: #fff;
+	font-size: 12px;
+}
+
+.meio_entrada,
+.meio_saida,
+.meio_saldo {
+	width: 100%;
+	height: 70px;
+	line-height: 70px;
+	font-size: 25px;
+	text-align: center;
+	vertical-align: center;
+	color: #000;
+}
+
+.prev_entrada,
+.prev_saida,
+.prev_saldo {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	text-align: center;
+	color: #000;
+}
+
+#alertaAconfirmar {
+	position: relative;
+	width: 150px;
+	height: 60px;
+	background: rgba(255, 0, 0, 0.8);
+	border-radius: 5px;
+	color: #fff;
+	text-align: center;
+	float: left;
+}
+
+#alertaAgendado {
+	position: relative;
+	width: 150px;
+	height: 60px;
+	background: rgba(60, 179, 113, 0.8);
+	border-radius: 5px;
+	color: #fff;
+	text-align: center;
+	float: left;
+}
+
+#alertaCancelado {
+	position: relative;
+	width: 150px;
+	height: 60px;
+	background: rgba(255, 0, 0, 0.8);
+	border-radius: 5px;
+	color: #fff;
+	text-align: center;
+	float: left;
+}
+
+#alertaAgendadoFinanceiro {
+	position: relative;
+	width: 150px;
+	height: 70px;
+	background: rgba(25, 96, 161, 0.8);
+	border-radius: 5px;
+	color: #fff;
+	text-align: center;
+	float: left;
+}
+
+#alertaRealizadoFinanceiro {
+	position: relative;
+	width: 150px;
+	height: 70px;
+	background: rgba(60, 179, 113, 0.8);
+	border-radius: 5px;
+	color: #fff;
+	text-align: center;
+	float: left;
+}
+
+#alertaAtrasadoFinanceiro {
+	position: relative;
+	width: 150px;
+	height: 70px;
+	background: rgba(255, 0, 0, 0.8);
+	border-radius: 5px;
+	color: #fff;
+	text-align: center;
+	float: left;
+}
+
+#alertaCanceladoFinanceiro {
+	position: relative;
+	width: 150px;
+	height: 70px;
+	background: rgba(255, 215, 0, 0.8);
+	border-radius: 5px;
+	color: #fff;
+	text-align: center;
+	float: left;
+}
+
+#btAddPagar {
+	position: relative;
+	float: left;
+	margin-left: 10px;
+	width: 160px;
+	height: 150px;
+	right: 5px;
+	border: 2px solid #ff1a1a;
+	border-radius: 8px;
+}
+
+#btAddReceber {
+	position: relative;
+	float: left;
+	margin-left: 10px;
+	width: 160px;
+	height: 150px;
+	right: 5px;
+	border: 2px solid #64b550;
+	border-radius: 8px;
+}
+
+#btAddPagar:hover,
+#btAddReceber:hover {
+	opacity: 0.8;
+}
+
+.cima_btadd,
+.sub_btadd {
+	width: 100%;
+	height: 20px;
+	background: #ff1a1a;
+	text-align: center;
+	color: #fff;
+}
+
+.meio_btadd {
+	position: relative;
+	top: -22px;
+	width: 100%;
+	height: 120px;
+	line-height: 120px;
+	font-size: 45px;
+	text-align: center;
+	vertical-align: center;
+	background: #ff1a1a;
+	color: #fff;
+}
+
+#btAddReceber .cima_btadd,
+#btAddReceber .sub_btadd {
+	width: 100%;
+	height: 20px;
+	background: #64b550;
+	text-align: center;
+	color: #fff;
+
+}
+
+#btAddReceber .meio_btadd {
+	position: relative;
+	top: -20px;
+	width: 100%;
+	height: 116px;
+	line-height: 116px;
+	font-size: 45px;
+	text-align: center;
+	vertical-align: center;
+	background: #64b550;
+	color: #fff;
+}
+
+#contaPagar {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background: #fff;
+	width: 650px;
+	height: 350px;
+	border-radius: 5px;
+	padding: 15px;
+	z-index: 99999999;
+	overflow: auto;
+}
+
+#addProdutos,
+#registraCompra {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background: #fff;
+	width: 650px;
+	height: 350px;
+	border-radius: 5px;
+	padding: 15px;
+	z-index: 99999999;
+	overflow: auto;
+}
+
+#campoAcoes {
+	position: relative;
+	left: 0px;
+	padding: 1px;
+	min-width: 100%;
+	width: auto;
+}
+
+#campoAcoes>.row {
+	display: block;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
+#campoAcoes>.row>.col-md-2 {
+	display: inline-block;
+	max-width: 120px;
+}
+
+#acoesPg,
+#cancelaPg,
+#informaPg,
+#logPg {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background: #fff;
+	width: 450px;
+	height: 400px;
+	border-radius: 5px;
+	padding: 15px;
+	z-index: 99999999;
+	overflow: auto;
+}
+
+.numStatus {
+	font-size: 26px;
+}
+
+.bg-verde {
+	background: #64b550;
+	border-radius: 20%;
+	opacity: 0.8;
+}
+
+.bg-azul {
+	background: #1960a1;
+	border-radius: 20%;
+	opacity: 0.8;
+}
+
+.bg-vermelho {
+	background: rgba(255, 0, 0, 0.5);
+	border-radius: 20%;
+}
+
+.txt-verde {
+	color: #64b550;
+}
+
+.txt-azul {
+	color: #1960a1;
+}
+
+.txt-vermelho {
+	color: rgba(255, 0, 0, 0.5);
+}
+
+/* CARDS */
+.card-bw {
+	width: 235px !important;
+	height: 150px;
+	text-align: center;
+	padding: 2px;
+	margin: 1px;
+}
+
+.centro-card-bw {
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.centro-card-bw-valor1 {
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.centro-card-bw-valor2 {
+	font-size: 35px;
+	font-weight: bold;
+}
+
+/* ESTOQUE */
+
+#incluiItem,
+#addConv {
+	position: fixed;
+	width: 500px;
+	height: 300px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: #fff;
+	z-index: 9999999;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+/* TELAS MENORES */
+
+@media screen and (max-width:767px) {
+	#principal {
+		width: calc(100%);
+		padding-left: 0px;
+		float: left;
+		top: 70px;
+		padding-top: 10px;
+		padding-left: 10px;
+		text-align: justify;
+	}
+
+	#atribuirCentroNF,
+	#atribuirCentro,
+	#editarCentro,
+	#novaProjeto,
+	#campoLog,
+	#campoAnexo,
+	#editaArquivo,
+	#removeAnexo,
+	#inativaConta,
+	#inativaCategoria,
+	#addCategoria,
+	#addgrupo,
+	#addCentro,
+	#contaPagar,
+	#acoesPg,
+	#cancelaPg,
+	#informaPg,
+	#logPg,
+	#addProdutos,
+	#registraCompra,
+	#incluiItem,
+	#addConv {
+		width: 90%;
+		height: 90%;
+	}
+
+	#alerta {
+		width: 80%;
+		height: 40%;
+	}
+
+	#rodape {
+		bottom: -38px;
+	}
+
+	/* FINANCEIRO */
+
+	#resumoFinanceiro {
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 100%;
+		height: 110px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	#resumoEntrada,
+	#resumoSaida,
+	#resumoSaldo {
+		width: 30%;
+		height: 105px;
+	}
+
+	.cima_entrada,
+	.cima_saida,
+	.cima_saldo {
+		font-size: 16px;
+	}
+
+	.meio_entrada,
+	.meio_saida,
+	.meio_saldo {
+		height: 30px;
+		line-height: 30px;
+		font-size: 16px;
+	}
+
+	.prev_entrada,
+	.prev_saida,
+	.prev_saldo {
+		font-size: 16px;
+	}
+
+
+	#alertaAconfirmar,
+	#alertaAgendado,
+	#alertaCancelado,
+	#alertaAgendadoFinanceiro,
+	#alertaRealizadoFinanceiro,
+	#alertaAtrasadoFinanceiro,
+	#alertaCanceladoFinanceiro {
+		width: 25%;
+	}
+
+	#btAddPagar,
+	#btAddReceber {
+		width: 30%;
+		height: 105px;
+	}
+
+	.meio_btadd {
+		top: -15px;
+		height: 70px;
+		line-height: 70px;
+	}
+
+	.numStatus {
+		font-size: 24px;
+	}
+
+	.card-bw {
+		width: 48% !important;
+		height: 140px;
+		text-align: center;
+	}
+
+	.centro-card-bw {
+		font-size: 40px;
+		font-weight: bold;
+	}
+
+	.centro-card-bw-valor1 {
+		font-size: 30px;
+		font-weight: bold;
+	}
+
+	.centro-card-bw-valor2 {
+		font-size: 25px;
+		font-weight: bold;
+	}
+}

@@ -1,0 +1,160 @@
+html, body {height:100%;} 
+body {
+	margin:0; 
+	padding:0;
+	background:#ddd;
+	color:#666;
+	font:75%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	text-align:center;
+	}
+#tudo { 
+	width:900px;
+	position:relative;  /*Contexto de posicionamento */
+	background:#fff;
+	margin:0 auto;
+	text-align:left;
+	min-height:100%;/**/
+	border-width:0 1px;
+	box-shadow:0px 0px 5px #000;
+	}
+ * html #tudo {height: 100%;}
+#conteudo {
+padding-bottom:30px;
+}
+#topo {
+	width:900px;
+	height:150px;
+	text-align:center;
+	padding-top:1px;
+	}
+#principal {
+	width:100%;
+	padding-left:0px;
+	float:left;
+	padding-top:10px;
+	text-align:justify;
+	}
+#rodape {
+	background:#FFF;
+	width:900px;
+	height:30px;
+	position: absolute;
+	bottom: 0; 
+	border-width: 1px 0;
+	text-align:center;
+	border-top-left-radius:9px;
+	border-top-right-radius:9px;
+	box-shadow:0px 0px 5px #000;
+	}
+#rodape p {
+	margin:0;
+	font-weight:bold;
+	color:#060;
+	}
+h1, h2, h4 { 	
+	font:bold 22px Arial, Helvetica, sans-serif;
+	color:#060;
+	}
+h4 {font-size:16px;}
+.clear {clear:both;}
+
+/* ALTERAÇÕES */
+/* CIMA */
+/*NÃO MOSTRAR NA TELA*/
+#impresso{
+position:absolute;
+	right:0px;
+	top:10px;
+	font-size:20px;
+	z-index:1000;
+	height: 100px;
+	width: 100px;
+	background: #000;
+	display:none;
+}
+#banner{
+	position: absolute;
+	height: 150px;
+	width: 900px;
+	border-style: none;
+	left: 50%;
+	background:#fff;
+	margin-left: -450px;
+	top: 2px;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+	box-shadow:0px 0px 5px #000;
+}
+.logo{
+    position: relative;
+    height: 94px;
+    width: 225px;
+    top:5px;
+    left: 5px;
+    border-radius:20px;
+}
+#titulo{
+    position:absolute;
+    left: 300px;
+    top:30px;
+    font-size: 35px;
+}
+.tt_pg{
+	
+}
+
+/* MENU */
+#menu{
+    position: absolute;
+    height: 40px;
+    width: 600px;
+    border-style: none;
+    border-color: #000;
+    bottom: 0px;
+    background: #ccc;
+    border-radius:20px;
+    z-index: 1000;
+	text-align:left;
+}
+
+/******* CAMPOS INPUTS *************/
+input[type="text"],input[type="password"],input[type="submit"], select, option, input[type="button"],input[type="date"], textarea{
+    font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+    color:#000;
+    font-size:14px;
+    background-color:#ccc;
+    border-radius:3px;
+    text-align:left;
+    border:none;
+}
+input[type="text"]:hover,input[type="password"]:hover,input[type="submit"]:hover,input[type="button"]:hover, input[type="date"]:hover,textarea:hover{
+    background:#999;
+    color:#000;
+}
+
+/*** LOGIN  loga.php  ***/
+#loga{
+    position: absolute;
+    width: 100px;
+    left: 50%;
+    top:40px;
+    margin-left: -50px;
+}
+#conteudo_loga{
+background:#fff;
+}
+#meio{
+    position: absolute;
+    top:160px;
+    width: 900px;
+    left: 50%;
+    background:#fff;
+    margin-left: -450px;
+    border-radius:20px;
+    border-style: none;
+    border-color: #000;
+    border-top-style:none;
+    border-bottom-style: none;
+    min-height: 75%;
+ box-shadow:0px 0px 5px #000;
+}

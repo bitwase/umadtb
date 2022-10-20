@@ -1,0 +1,13 @@
+﻿#myheader, #mysearchbar, #myleftcol, #myfooter {
+    display: none;
+  }
+  span.abstract_link {
+    display: none;
+  }
+  #maincontents {
+      float:none;
+      margin:0px;
+      overflow:auto;
+      padding:0;
+      width:100%;
+  }

@@ -1,0 +1,699 @@
+/*
+Cor anterior: #4DA9A6
+Cor Atual: #00858A
+*/
+/*Linhas abaixo ajusta barra de rolagem para cor verde*/
+tab{
+padding-left:5em;
+}
+#mostra, #mostra2{
+	position:fixed;
+	background:#ccc;
+	z-index:14;
+	width:300px;
+	border-radius:4px;
+	opacity:0.9;
+}
+.mostra, .mostra2{
+	position:fixed;
+	margin:5px;
+	z-index:15;
+	opacity:1.0;
+	padding: 5px;
+	height:auto;
+}
+
+@-webkit-keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; } 
+}
+@-moz-keyframes fadeIn {
+0% { opacity: 0;}
+100% { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ccc;
+    border-radius:5px;
+	box-shadow:0px 0px 5px #000;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    height:6px;
+    background: #F4F4F4;
+    border-radius:5px;
+}
+::-webkit-scrollbar-thumb {
+    background: #00858A;
+    border-radius:5px;
+}
+@font-face {
+    font-family: 'ubuntulight';
+    src: url('../fontes/ubuntu_l-webfont.eot');
+    src: url('../fontes/ubuntu_l-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fontes/ubuntu_l-webfont.woff2') format('woff2'),
+         url('../fontes/ubuntu_l-webfont.woff') format('woff'),
+         url('../fontes/ubuntu_l-webfont.ttf') format('truetype'),
+         url('../fontes/ubuntu_l-webfont.svg#ubuntulight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+html, body {height:100%;} 
+body{
+	margin:0; 
+	padding:0;
+	background:#ddd;
+	color:#666;
+	font:70%/0.4;/*Verdana, Arial, Helvetica, sans-serif;*/
+	font-family: ubuntulight;
+	font-size:14px;
+	text-align:center;
+}
+/* Definição padrão de link*/
+a:link, a:visited{
+color:#00858A;
+text-decoration:none;
+}
+a:hover{
+color:#727376;
+text-decoration:none;
+}
+
+#calendar a:link,#calendar a:visited{
+color:#000;
+text-decoration:none;
+}
+a:hover{
+color:#727376;
+text-decoration:none;
+}
+#refresh{
+    position:absolute;
+    right:5px;
+    top:120px;
+    border-radius:15px;
+    height:30px;
+    width:30px;
+    background:#fff;
+    box-shadow: 0px 0px 30px #ccc;
+    z-index:10;
+}
+
+#tudo { 
+	width:900px;
+	position:relative;  /*Contexto de posicionamento */
+	background:#fff;
+	margin:0 auto;
+	text-align:left;
+	min-height:100%;/**/
+	border-width:0 1px;
+	box-shadow:0px 0px 5px #000;
+	}
+* html #tudo {height: 100%;}
+#conteudo {
+padding-bottom:30px;
+}
+#topo {
+	width:900px;
+	height:150px;
+	text-align:center;
+	padding-top:1px;
+	}
+#principal {
+	width:100%;
+	padding-left:0px;
+	float:left;
+	padding-top:10px;
+	text-align:justify;
+	}
+#rodape_imprime{
+display:none;
+}
+#rodape {
+	background:#FFF;
+	width:900px;
+	height:30px;
+	position: absolute;
+	bottom: 0; 
+	border-width: 1px 0;
+	text-align:center;
+	border-top-left-radius:9px;
+	border-top-right-radius:9px;
+	box-shadow:0px 0px 5px #000;
+	font-size:12px;
+	}
+#rodape p {
+	margin:0;
+	font-weight:bold;
+	color:#060;
+	}
+h1, h2, h4 { 	
+	font:bold 22px Arial, Helvetica, sans-serif;
+	color:#060;
+	}
+h4 {font-size:16px;}
+.clear {clear:both;}
+
+/* ALTERAÇÕES */
+/* CIMA */
+/*NÃO MOSTRAR NA TELA*/
+#impresso{
+	display:none;
+}
+#banner{
+	position: absolute;
+	height: 150px;
+	width: 900px;
+	border-style: none;
+	left: 50%;
+	background:#fff;
+	margin-left: -450px;
+	top: 2px;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+	box-shadow:0px 0px 5px #000;
+}
+.logo{
+    position: relative;
+    height: 94px;
+    width: 225px;
+    top:15px;
+    left: 5px;
+    border-radius:20px;
+}
+#titulo{
+    position:absolute;
+    left: 300px;
+    top:30px;
+    font-size: 35px;
+}
+.tt_pg{
+	font-size:25px;
+}
+#nome_saud{
+	position:absolute;
+	top:5px;
+	right:5px;
+}
+
+/* MENU */
+.menu{
+    position: absolute;
+    height: 40px;
+    width: auto;
+    border-style: none;
+    border-color: #000;
+    bottom: 0px;
+    background: #ccc;
+    border-radius:5px;
+    z-index: 1000;
+    text-align:left;
+    transition:0.5s;
+}
+.menu2{
+    position: fixed;
+    height: 40px;
+    width: auto;
+    border-style: none;
+    border-color: #000;
+    top: 0px;
+    background: #ccc;
+    border-radius:5px;
+    z-index: 1000;
+    text-align:left;
+    transition:0.5s;
+}
+.lg2{
+display:block;
+border-radius:-20;
+transition: 1s;
+}
+.lg1{
+opacity:0;
+/*display:none;*/
+transition: 1s;
+width:0px;
+}
+/******* CAMPOS INPUTS *************/
+input, select, option, textarea{
+    font-family:ubuntulight;/*Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;*/
+    color:#000;
+    font-size:14px;
+    background-color:#ccc;
+    border-radius:3px;
+    text-align:left;
+    border:none;
+}
+input:hover,textarea:hover, select:hover, option:hover{
+    background:#999;
+    color:#000;
+}
+
+/*** LOGIN  loga.php  ***/
+#loga{
+    position: absolute;
+    width: 500px;
+    left: 50%;
+    top:40px;
+    margin-left: -250px;
+}
+#conteudo_loga{
+background:#fff;
+}
+#meio{
+    position: absolute;
+    top:160px;
+    width: 900px;
+    left: 50%;
+    background:#fff;
+    margin-left: -450px;
+    border-radius:20px;
+    border-style: none;
+    border-color: #000;
+    border-top-style:none;
+    border-bottom-style: none;
+    min-height: 75%;
+ box-shadow:0px 0px 5px #000;
+}
+
+
+/* PÁGINA DADOS COLABORADOR*/
+
+#col_dados{
+position: relative;
+width:600px;
+}
+#col_dados_foto{
+position: relative;
+left:10px;
+height:200px;
+width:200px;
+box-shadow:0px 0px 15px #000;
+border-radius:100px;
+}
+.foto_colaborador{
+height:200px;
+width:200px;
+border-radius:100px;
+}
+#dados_inf{
+position:absolute;
+top:0px;
+left:240px;
+z-index:5;
+font-size:16px;
+}
+
+#lider{
+box-shadow:0px 0px 30px #00858A;
+}
+
+/* 
+PROGRAMAçÃO 
+GRADE COLABORADORES
+*/
+.colaborador{
+width:100%;
+min-height:100px;
+}
+.grade_colaborador2{
+position:relative;
+width:95%;
+}
+.grade_colaborador{
+position:relative;
+width:95%;
+}
+
+.grade_colaborador a:link, .grade_colaborador a:visited ,.grade_colaborador2 a:link, .grade_colaborador2 a:visited {
+	color:#666;
+}
+.grade_colaborador a:hover img, .grade_colaborador2 a:hover img, #lider:hover{
+	box-shadow: 0px 0px 15px #000;
+}
+
+.colaborador li, .grade_colaborador li, .grade_colaborador2 li{
+display: inline-block;
+width:150px;
+padding:10px;
+text-align:center;
+vertical-align:top;
+}
+.col_foto{
+width:100px;
+height:100px;
+border-radius:50px;
+box-shadow:0px 0px 15px #000;
+}
+
+.col_foto a:hover{
+width:100px;
+height:100px;
+border-radius:50px;
+box-shadow:0px 0px 15px #ccc;
+}
+
+
+/* ESCONDER CONTEÚDO */
+.esconde{
+background:#ccc;
+font-size:14px;
+}
+
+/** TESTES **/
+
+a.dcontexto{
+  position:relative; 
+  font:12px arial, verdana, helvetica, sans-serif; 
+  padding:0;
+  color:#666;
+  text-decoration:none;
+  cursor:hand; 
+  z-index:24;
+  }
+  a.dcontexto:hover{
+  background:transparent;
+  color:#f00;
+  z-index:25; 
+  }
+  a.dcontexto span{display: none}
+  a.dcontexto:hover span{ 
+  display:block;
+  position:absolute;
+  width:600px; 
+  top:3em;
+  text-align:justify;
+  left:0;
+  font: 12px arial, verdana, helvetica, sans-serif; 
+  padding:5px 10px;
+  border:1px solid #999;
+  background:#ccc; 
+  color:#000;
+  }
+.leg_ag{
+height:15px;
+width:15px;
+border-radius:15px;
+}
+/* BOTÕES */
+.bt{
+width:20px;
+height:20px;
+background:#00858A;
+border-radius:20px;
+}
+.bt:hover{
+width:20px;
+height:20px;
+background:#00858A;
+border-radius:20px;
+box-shadow: 0px 0px 15px #000;
+}
+.notas{
+position:absolute;
+left:400px;
+}
+.pesq{
+position:absolute;
+width:300px;
+height:auto;
+}
+.pdir{
+position:absolute;
+left:310px;
+width:300px;
+height:auto;	
+z-index:10;
+}
+.pfortes{
+text-align:center;
+width:100%;
+border-radius:15px;
+
+height:150px;
+box-shadow:0px 0px 15px #000;
+}
+.pfracos{
+text-align:center;
+width:100%;
+border-radius:15px;
+box-shadow:0px 0px 15px #000;
+}
+.icones{
+height:20px;
+width:20px;
+border-radius:20px;
+}
+#alt_senha{
+position:absolute;
+width: 200px;
+height: 200px;
+margin-left:50%;
+left:-100px;
+}
+#inf{
+    height: 300px;
+    overflow: auto;
+    box-shadow: 0px 0px 20px #000;
+    border-radius: 15px;
+}
+#novos,#notificacoes{
+    position:absolute;
+    top:110px;
+    height:100%;
+    width:100%;
+    z-index:20000;
+    background: #ccc;
+    border-radius:20px;
+    opacity: 0.95;
+}
+#fecha{
+    position: absolute;
+    top:0px;
+    left:0px;
+    height:30px;
+    width: 30px;
+    border-radius: 25px;
+    background: #f00;
+}
+.nv{/*ver chamados nao visualizados ainda*/
+    background:#fff;
+	font-size:20px;
+left:30px;
+right:0px;
+top:0px;
+bottom:0px;
+}
+/* RELATÓRIO */
+/* GRÁFICOS */
+#gr_prioridades{
+position:absolute;
+left:0px;
+width:300px;
+height:auto;
+}
+#prioridades{
+	position:absolute;
+	left:0px;
+}
+#lg1{
+	position:absolute;
+	left:160px;
+	top:20px;
+}
+
+#gr_status{
+position:absolute;
+left:300px;
+width:300px;
+height:auto;
+}
+#grstatus{
+	position:absolute;
+	left:0px;
+}
+#lg2{
+	position:absolute;
+	left:160px;
+	top:20px;
+}
+
+#gr_area{
+position:absolute;
+left:600px;
+width:300px;
+height:auto;
+}
+#grareatecnica{
+	position:absolute;
+	left:0px;
+}
+#lg3{
+	position:absolute;
+	left:160px;
+	top:20px;
+}
+#gr_usuario{
+height:420px;
+width:100%;
+}
+#grusuario{
+position:absolute;
+}
+
+#gr_setor{
+height:420px;
+width:100%;
+}
+#grsetor{
+position:absolute;
+}
+#gr_tipo{
+height:420px;
+width:100%;
+}
+#grtipo{
+position:absolute;
+}
+
+#gr_dia{
+height:220px;
+width:100%;
+overflow:auto;
+}
+#gr_mes{
+height:220px;
+width:100%;
+overflow:auto;
+}
+/* TEXTOS */
+.num{
+position:relative;
+left:0px;
+}
+
+.chabt{
+position:relative;
+left:10px;
+}
+.chus{
+position:relative;
+left:20px;
+}
+.chset{
+position:relative;
+left:30px;
+}
+.chass{
+position:relative;
+left:0px;
+}
+.chpri{
+position:relative;
+left:20px;
+}
+.chst{
+position:relative;
+left:20px;
+}
+.chdes{
+position:relative;
+left:0px;
+}
+
+#cct_baixo{
+background-image: url("../imagens/cctos_baixo.png");
+background-size: 100% 100%;
+background-repeat: no-repeat;
+width:100%;
+height:150px;
+position:absolute;
+left:0px;
+bottom:0px;
+z-index:1;
+opacity:0.2;
+}
+
+#cct_cima{
+background-image: url("../imagens/cctos_cima.png");
+background-size: 100% 100%;
+background-repeat: no-repeat;
+position:absolute;
+width:100%;
+height:150px;
+left:0px;
+top:0px;
+z-index:9;
+opacity:0.2;}
+
+form{
+position:relative;
+z-index:10;
+}
+#informativo{
+	position:fixed;
+	display:none;
+	z-index:100000;
+	top:0px;
+	left:0px;
+	background:#000;
+	opacity:0.9;
+	height:100%;
+	width:100%;
+	transition: 0.5s;
+
+}
+#informativo .fecharinfor{
+	position:absolute;
+	right:35px;
+	top: 5px;
+	background:#f00;
+	border-radius:30px;
+}
+#bt_informativo{
+	position:fixed;
+	right:0px;
+	width:150px;
+	bottom:10px;
+	transition:0.5s;
+}
+#bt_informativo:hover{
+	position:fixed;
+	right:15px;
+	width:150px;
+	bottom:10px;
+	transition:0.5s;
+}
+#campoinformativo{
+	height:100%;
+	margin: 0 auto;
+}
+.mascote{
+	height:300px;
+	width:;
+	transition:0.5s;
+}
+.mascote:hover{
+	height:400px;
+	width:;
+	transition:0.5s;
+}
+.mascote-gripe{
+	height:150px;
+	width:;
+	transition:0.5s;
+}
+.mascote-gripe:hover{
+	height:200px;
+	width:;
+	transition:0.5s;
+}

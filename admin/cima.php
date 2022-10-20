@@ -15,22 +15,22 @@ else if($hs > 12 && $hs <= 18){
 else{
 	$sau = "Boa noite";
 }
+
 ?>
-<div id="impresso"><?php echo "Impresso em $dt_hj por $us_nome";?></div>
+<div id="impresso"><?php echo "Impresso em $dt_hj por $nome";?></div>
 <div class="banner">
-<div class="logo"><a href="index.php?pg=inicio.php"><img src="arquivos/imagens/logo-nova-branco.png" border="none" height="180px" />
-</a></div>
-<div id="titulo" style="width:100%;font-size:25px;color:#fff;text-align:center;left:0;right:0; align: auto;"><?php echo "$congregacao";?></div>
+<!--div class="logo"><a href="index.php?pg=inicio.php"><img src="arquivos/imagens/logo-login.png" border="none" />
+</a></div-->
 <div id="mens">
 <?php
-echo "$sau <b>$nome_</b>";
+//print_r($config);
+echo "$sau <b>$nome</b><br>
+Você está acessando <b>".$config['sistema']."</b>."
 ?>
 </div>
 <?php
  if($cont > 0){   
-?><div id="menu" class="menu"><?php include 'menu.php'?></div>
-<div id="menuico" onclick="mostraMenu()"><img src="arquivos/icones/menu.png" height="25px" width="25px"></div>
-<div id="menu320" class="menu320" style="display:none;"><?php include 'menu.php'?></div>
+?>
 <?php }?>
 </div>
 </div>

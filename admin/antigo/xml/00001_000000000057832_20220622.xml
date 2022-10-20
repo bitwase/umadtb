@@ -1,0 +1,83 @@
+<tcCompNfse>
+        <Nfse>
+          <InfNfse>
+            <Numero>59351</Numero>
+            <CodigoVerificacao>X3P3X00K</CodigoVerificacao>
+            <DataEmissao>2022-06-22T09:21:41</DataEmissao>
+            <IdentificacaoRps>
+              <Numero>57832</Numero>
+              <Serie>1</Serie>
+              <Tipo>1</Tipo>
+            </IdentificacaoRps>
+            <DataEmissaoRps>2022-06-22T09:21:41</DataEmissaoRps>
+            <NaturezaOperacao>4</NaturezaOperacao>
+            <RegimeEspecialTributacao>0</RegimeEspecialTributacao>
+            <OptanteSimplesNacional>2</OptanteSimplesNacional>
+            <IncentivadorCultural>2</IncentivadorCultural>
+            <Competencia>0001-01-01T00:00:00</Competencia>
+            <NfseSubstituida>0</NfseSubstituida>
+            <Servico>
+              <Valores>
+                <ValorServicos>148.30</ValorServicos>
+                <NumeroDeducao>0</NumeroDeducao>
+                <ValorDeducoes>0.00</ValorDeducoes>
+                <ValorPis>0.00</ValorPis>
+                <ValorCofins>0.00</ValorCofins>
+                <ValorInss>0.00</ValorInss>
+                <ValorIr>0.00</ValorIr>
+                <ValorCsll>0.00</ValorCsll>
+                <IssRetido>2</IssRetido>
+                <ValorIss>7.41</ValorIss>
+                <ValorIssRetido>0.00</ValorIssRetido>
+                <OutrasRetencoes>0.00</OutrasRetencoes>
+                <BaseCalculo>148.30</BaseCalculo>
+                <Aliquota>0.05</Aliquota>
+                <ValorLiquidoNfse>148.30</ValorLiquidoNfse>
+                <DescontoIncondicionado>0.00</DescontoIncondicionado>
+                <DescontoCondicionado>0.00</DescontoCondicionado>
+              </Valores>
+              <ItemListaServico>402 </ItemListaServico>
+              <CodigoCnae>0</CodigoCnae>
+              <CodigoTributacaoMunicipio>402</CodigoTributacaoMunicipio>
+              <Discriminacao>SERVICO DE EXAMES DE ESPIROMETRIA T 1.00 UN Junho/2022 SERVICO DE EXAMES RADIOLOGICOS T 1.00 UN Junho/2022 SERVICO DE FONOAUDIOLOGIA T 1.00 UN Junho/2022 "Ampla Isencao Fiscal nos Termos da CF/88, art.150, inc VI, alinea C" "Lei  Federal 2613/1995 arts. 12 e 13" "Decreto-lei 9403/1946 art. 5,paragrafo Unico " "Decreto 57375/65 (art.12)" Os servicos referentes a esta NFS-e sao Imunes do ISS.. </Discriminacao>
+              <CodigoMunicipio>4106902</CodigoMunicipio>
+            </Servico>
+            <ValorCredito>0</ValorCredito>
+            <PrestadorServico>
+              <IdentificacaoPrestador>
+                <Cnpj>03802018000103</Cnpj>
+                <InscricaoMunicipal>080202313688</InscricaoMunicipal>
+              </IdentificacaoPrestador>
+              <NomeFantasia>SERVI?O SOCIAL DA INDUSTRIA SESI</NomeFantasia>
+              <Endereco>
+                <Endereco>CANDIDO DE ABREU</Endereco>
+                <Numero>200</Numero>
+                <Bairro>CENTRO C?VICO</Bairro>
+                <CodigoMunicipio>4106902</CodigoMunicipio>
+                <Uf>PR</Uf>
+                <Cep>80530902</Cep>
+              </Endereco>
+            </PrestadorServico>
+            <TomadorServico>
+              <IdentificacaoTomador>
+                <CpfCnpj>
+                  <Cnpj>02401185000171</Cnpj>
+                </CpfCnpj>
+              </IdentificacaoTomador>
+              <RazaoSocial>ENGEREDE CABEAMENTO ESTR. E SIST. DE CONECT. LTDA</RazaoSocial>
+              <Endereco>
+                <Endereco>R MATO GROSSO</Endereco>
+                <Numero>191</Numero>
+                <Bairro>AGUA VERDE</Bairro>
+                <CodigoMunicipio>4106902</CodigoMunicipio>
+                <Uf>PR</Uf>
+                <Cep>80620070</Cep>
+              </Endereco>
+              <Contato>
+                <Telefone>4133290102</Telefone>
+                <Email>engeredecab@engeredecab.com.br</Email>
+              </Contato>
+            </TomadorServico>
+          </InfNfse>
+        </Nfse>
+      </tcCompNfse>
