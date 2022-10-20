@@ -283,8 +283,8 @@
     </nav>
 
     <div class="jumbotron text-center">
-        <h1><span style="line-height: 60px; vertical-align:bottom">RETIRO</span> <img src="arquivos/imagens/logo.png" height="100px"></h1>
-
+        <!--h1><span style="line-height: 60px; vertical-align:bottom">RETIRO</span> <img src="arquivos/imagens/logo.png" height="100px"></h1-->
+        <img src="arquivos/imagens/banner.jpeg" width="100%">
         <a href="#inscricao"><button type="button" name="" id="" class="btn btn-primary btn-lg ">INSCREVA-SE</button></a>
     </div>
     <!-- Container (About Section) -->
@@ -341,7 +341,8 @@
 
         <div id="alertaOk" class="alert alert-success" style="width:100%; height: 100%; font-size: 22px; display:none" role="alert">
             <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
-            <span id="msgAlerta">Inscrição realizada com sucesso.</span>
+            <span id="msgAlerta">Inscrição realizada com sucesso.<br>
+        O pagamento deve ser realizado até o dia <b>10/11/2022</b>, podendo ser pago em <b>dinheiro ou via pix.</b><br><b>Chave PIX:</b> umadtb.central@gmail.com</span>
 
         </div>
 
