@@ -396,7 +396,7 @@
                     <div class="col-sm-2 form-group">
                         <div class="form-group">
                             <label for="cmpCpl">Complemento</label>
-                            <input type="text" class="form-control" name="cmpCpl" id="cmpCpl" aria-describedby="helpId" placeholder="">
+                            <input type="text" class="form-control" name="cmpCpl" id="cmpCpl" aria-describedby="helpId" placeholder="" maxlength="14">
                         </div>
                     </div>
                 </div>
@@ -595,6 +595,7 @@
                     num: num,
                     complemento: complemento,
                     bairro: bairro,
+                    cidade: cidade,
                     uf: uf,
                     telefone: telefone,
                     email: email,

@@ -40,7 +40,7 @@ Email: $email <br>
 ";
 
 try {
-    $sql = "insert into tentativa_cadastro (data, post) values(now(),'$dados')";
+    $sql = "insert into tentativa_cadastro (data, post, nome) values(now(),'$dados', '$nome')";
     $pdo->query($sql);
 } catch (PDOException $e) {
     return $e->getMessage();
