@@ -179,6 +179,11 @@ while ($l = $lgrid->fetch()) {
                         width: 150
                     },
                     {
+                        field: "Pagamento",
+                        title: "Pagamento",
+                        width: 150
+                    },
+                    {
                         field: "DataRegistro",
                         title: "Data Inscrição",
                         width: 170,
@@ -252,7 +257,7 @@ while ($l = $lgrid->fetch()) {
 
             }
 
-            //load();
+            load();
             $("#load").click(function(e) {
                 load();
             });
